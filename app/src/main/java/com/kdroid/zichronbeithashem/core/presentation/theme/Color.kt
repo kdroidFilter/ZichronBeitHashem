@@ -1,4 +1,4 @@
-package com.kdroid.zichronbeithashem.ui.theme
+package com.kdroid.zichronbeithashem.core.presentation.theme
 import androidx.compose.ui.graphics.Color
 
 val primaryLight = Color(0xFF825513)
