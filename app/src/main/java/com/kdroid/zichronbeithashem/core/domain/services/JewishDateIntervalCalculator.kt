@@ -4,10 +4,10 @@ import com.kdroid.zichronbeithashem.core.domain.model.TimeInterval
 import com.kosherjava.zmanim.hebrewcalendar.JewishDate
 import java.util.concurrent.TimeUnit
 
-class JewishDateIntervalCalculator(private val currentDateProvider: CurrentDateProvider) {
+class JewishDateIntervalCalculator(dateProvider: DateProvider) {
 
-   private val startDate = currentDateProvider.getSecondTempleDestructionDate()
-   private val currentDate = currentDateProvider.getCurrentJewishDate()
+   private val startDate = dateProvider.getSecondTempleDestructionDate()
+   private val currentDate = dateProvider.getCurrentJewishDate()
 
     fun calculateDaysSinceTempleDestruction(): Long {
         val diffInMillis = currentDate.gregorianCalendar.timeInMillis - startDate.gregorianCalendar.timeInMillis

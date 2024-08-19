@@ -2,7 +2,7 @@ package com.kdroid.zichronbeithashem.core.domain.services
 
 import com.kosherjava.zmanim.hebrewcalendar.JewishDate
 
-interface CurrentDateProvider {
+interface DateProvider {
     fun getCurrentJewishDate(): JewishDate
 
     fun getSecondTempleDestructionDate(): JewishDate
