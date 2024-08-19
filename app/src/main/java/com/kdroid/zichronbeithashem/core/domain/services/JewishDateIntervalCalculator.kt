@@ -6,18 +6,15 @@ import java.util.concurrent.TimeUnit
 
 class JewishDateIntervalCalculator(private val currentDateProvider: CurrentDateProvider) {
 
-    fun calculateDaysSinceTempleDestruction(): Long {
-        val startDate = currentDateProvider.getSecondTempleDestructionDate()
-        val currentDate = currentDateProvider.getCurrentJewishDate()
+   private val startDate = currentDateProvider.getSecondTempleDestructionDate()
+   private val currentDate = currentDateProvider.getCurrentJewishDate()
 
+    fun calculateDaysSinceTempleDestruction(): Long {
         val diffInMillis = currentDate.gregorianCalendar.timeInMillis - startDate.gregorianCalendar.timeInMillis
         return TimeUnit.MILLISECONDS.toDays(diffInMillis)
     }
 
     fun convertDaysToHebrewYearsMonthsDays(): TimeInterval {
-        val startDate = currentDateProvider.getSecondTempleDestructionDate()
-        val currentDate = currentDateProvider.getCurrentJewishDate()
-
         var years = currentDate.jewishYear - startDate.jewishYear
         var months = currentDate.jewishMonth - startDate.jewishMonth
         var daysOfMonth = currentDate.jewishDayOfMonth - startDate.jewishDayOfMonth
