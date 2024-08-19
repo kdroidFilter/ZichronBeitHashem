@@ -26,8 +26,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize()
                 ) {
 
-
-
                     val intervalCalculator : JewishDateIntervalCalculator by inject(JewishDateIntervalCalculator::class.java)
 
                     val daysSinceDestruction = intervalCalculator.calculateDaysSinceTempleDestruction()
