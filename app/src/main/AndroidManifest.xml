@@ -18,12 +18,21 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ZichronBeitHashem">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <receiver android:name=".features.widget.TimeElapsedAppWidgetReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/time_elapsed_widget_info" />
+        </receiver>
+
+
+
     </application>
+
+
 
 </manifest>

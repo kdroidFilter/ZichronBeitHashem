@@ -17,12 +17,14 @@ zmanim = "2.5.0"
 kmpWindowsSizeClass = "0.5.0"
 coreSplashscreen = "1.2.0-alpha01"
 datastorePreferences = "1.1.1"
+glancePreview = "1.1.0"
 
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-androidx-glance = { module = "androidx.glance:glance", version.ref = "glance" }
-androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "glance" }
+glance-appwidget = { group = "androidx.glance", name = "glance-appwidget", version.ref = "glance" }
+glance-material = { group = "androidx.glance", name = "glance-material3", version.ref = "glance" }
+glance-preview = { group = "androidx.glance", name = "glance-appwidget-preview", version.ref = "glance" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -48,6 +50,7 @@ zmanim = { module = "com.kosherjava:zmanim", version.ref = "zmanim" }
 kmp-windows-size = {module = "dev.chrisbanes.material3:material3-window-size-class-multiplatform", version.ref= "kmpWindowsSizeClass"}
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
+androidx-glance-preview = { group = "androidx.glance", name = "glance-preview", version.ref = "glancePreview" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

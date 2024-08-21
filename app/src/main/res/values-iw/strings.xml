@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="time_elapsed_title">זמן שחלף מאז חורבן בית המקדש השני</string>
+    <string name="years">שנים</string>
+    <plurals name="months">
+        <item quantity="one">חודש</item>
+        <item quantity="two">חודשיים</item>
+        <item quantity="other">חודשים</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="one">יום</item>
+        <item quantity="two">יומיים</item>
+        <item quantity="other">ימים</item>
+    </plurals>
+</resources>

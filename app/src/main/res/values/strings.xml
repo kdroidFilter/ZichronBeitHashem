@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Zichron Beit Hashem</string>
+    <!-- Widget -->
+    <string name="time_elapsed_title">Time elapsed since the destruction of the second Beit Hamikdash</string>
+    <string name="years">Years</string>
+    <plurals name="months">
+        <item quantity="one">Month</item>
+        <item quantity="other">Months</item>
+    </plurals>
+    <plurals name="days">
+        <item quantity="one">Day</item>
+        <item quantity="other">Days</item>
+    </plurals>
 </resources>

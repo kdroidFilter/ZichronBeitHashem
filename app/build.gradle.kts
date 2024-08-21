@@ -63,8 +63,9 @@ dependencies {
     implementation(libs.androidx.material3)
 
     //Compose Widget
-    implementation(libs.androidx.glance)
-    implementation(libs.androidx.glance.appwidget)
+    implementation(libs.glance.appwidget)
+    implementation(libs.glance.material)
+    implementation(libs.androidx.glance.preview)
 
     //ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.compose)

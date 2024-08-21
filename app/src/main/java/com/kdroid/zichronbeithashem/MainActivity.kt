@@ -7,12 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.kdroid.zichronbeithashem.core.domain.services.JewishDateIntervalCalculator
 import com.kdroid.zichronbeithashem.core.presentation.theme.AppTheme
-import org.koin.java.KoinJavaComponent.inject
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,17 +23,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize()
                 ) {
 
-                    val intervalCalculator : JewishDateIntervalCalculator by inject(JewishDateIntervalCalculator::class.java)
-
-                    val daysSinceDestruction = intervalCalculator.calculateDaysSinceTempleDestruction()
-                    val hebrewInterval = intervalCalculator.convertDaysToHebrewYearsMonthsDays()
-
-                    Text("Days since the destruction of the Second Temple: $daysSinceDestruction days")
-                    Text("In Hebrew years, months, and days: $hebrewInterval")
                 }
             }
         }
     }
 }
-
 

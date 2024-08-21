@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="time_elapsed_title">Temps écoulé depuis la destruction du deuxième Beit Hamikdash</string>
+    <string name="years">Années</string>
+    <plurals name="months" tools:ignore="MissingQuantity">
+        <item quantity="one" tools:ignore="ImpliedQuantity">Mois</item>
+        <item quantity="other">Mois</item>
+    </plurals>
+    <plurals name="days" tools:ignore="MissingQuantity">
+        <item quantity="one" tools:ignore="ImpliedQuantity">Jour</item>
+        <item quantity="other" tools:ignore="MissingQuantity">Jours</item>
+    </plurals>
+</resources>
