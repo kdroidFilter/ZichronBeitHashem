@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">זכרון בית ה\'</string>
+
     <string name="time_elapsed_title">זמן שחלף מאז חורבן בית המקדש השני</string>
     <string name="years">שנים</string>
     <plurals name="months">

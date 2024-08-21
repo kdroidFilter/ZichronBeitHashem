@@ -1,16 +1,18 @@
 package com.kdroid.zichronbeithashem.features.widget
 
 import android.content.Context
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
 import androidx.glance.GlanceTheme
 import androidx.glance.Image
 import androidx.glance.ImageProvider
+import androidx.glance.LocalSize
 import androidx.glance.appwidget.GlanceAppWidget
+import androidx.glance.appwidget.SizeMode
 import androidx.glance.appwidget.cornerRadius
 import androidx.glance.appwidget.provideContent
 import androidx.glance.background
@@ -34,27 +36,28 @@ import com.kdroid.zichronbeithashem.core.domain.model.TimeInterval
 import com.kdroid.zichronbeithashem.core.domain.services.JewishDateIntervalCalculator
 import org.koin.java.KoinJavaComponent.inject
 
-object TimeElapsedWidget : GlanceAppWidget() {
+class TimeElapsedWidget : GlanceAppWidget() {
 
-    private val intervalCalculator: JewishDateIntervalCalculator by inject(
-        JewishDateIntervalCalculator::class.java
-    )
+    private val intervalCalculator: JewishDateIntervalCalculator by inject(JewishDateIntervalCalculator::class.java)
+    
+    override val sizeMode = SizeMode.Exact
+
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         provideContent {
-
             GlanceTheme() {
-                TimeElapsedComponent(
-                    context, intervalCalculator.convertDaysToHebrewYearsMonthsDays()
-                )
+                TimeElapsedWidget(context, intervalCalculator.convertDaysToHebrewYearsMonthsDays())
             }
         }
+
+
     }
 }
 
 
 @Composable
-fun TimeElapsedComponent(context: Context, timeInterval: TimeInterval) {
+private fun TimeElapsedWidget(context: Context, timeInterval: TimeInterval) {
+    val size = LocalSize.current
 
     Box(
         modifier = GlanceModifier.fillMaxSize()
@@ -67,26 +70,26 @@ fun TimeElapsedComponent(context: Context, timeInterval: TimeInterval) {
         )
         Column(
             modifier = GlanceModifier.fillMaxSize(),
-            verticalAlignment = Alignment.Top
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Spacer(GlanceModifier.height(8.dp))
-
-            Row(
-                modifier = GlanceModifier.fillMaxWidth().padding(horizontal = 16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = context.applicationContext.resources.getString(R.string.time_elapsed_title),
-                    style = TextStyle(
-                        color = ColorProvider(color = (Color.White)),
-                        fontSize = 22.sp,
-                        fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center
-                    ),
-                )
+            if (size.height > 150.dp) {
+                Spacer(GlanceModifier.height(8.dp))
+                Row(
+                    modifier = GlanceModifier.fillMaxWidth().padding(horizontal = 16.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = context.applicationContext.resources.getString(R.string.time_elapsed_title),
+                        style = TextStyle(
+                            color = ColorProvider(color = (Color.White)),
+                            fontSize = MaterialTheme.typography.titleMedium.fontSize,
+                            fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center
+                        ),
+                    )
+                }
+                Spacer(GlanceModifier.height(8.dp))
             }
-            Spacer(GlanceModifier.height(8.dp))
-
             Row(
                 modifier = GlanceModifier
                     .fillMaxWidth()
@@ -119,7 +122,7 @@ fun TimeElapsedComponent(context: Context, timeInterval: TimeInterval) {
 }
 
 @Composable
-fun TimeComponent(label: String, value: Int) {
+private fun TimeComponent(label: String, value: Int) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = GlanceModifier.padding(8.dp)
@@ -129,7 +132,7 @@ fun TimeComponent(label: String, value: Int) {
             text = value.toString(),
             style = TextStyle(
                 color = ColorProvider(color = (Color.White)),
-                fontSize = 26.sp,
+                fontSize = MaterialTheme.typography.titleLarge.fontSize,
             ),
             modifier = GlanceModifier
                 .padding(8.dp)
@@ -142,7 +145,7 @@ fun TimeComponent(label: String, value: Int) {
             text = label,
             style = TextStyle(
                 color = ColorProvider(color = (Color.White)),
-                fontSize = 16.sp,
+                fontSize = MaterialTheme.typography.titleSmall.fontSize,
                 fontWeight = FontWeight.Bold
             )
         )

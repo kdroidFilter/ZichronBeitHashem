@@ -20,11 +20,13 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        setProperty("archivesBaseName", applicationId + "(" + versionName + ")")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
