@@ -22,4 +22,5 @@ fun setupFrequentWidgetUpdate(context: Context) {
         .build()
 
     WorkManager.getInstance(context).enqueue(frequentWorkRequest)
+
 }

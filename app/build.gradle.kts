@@ -102,6 +102,8 @@ dependencies {
 
     //Jetpack Datastore
     implementation(libs.androidx.datastore.preferences)
+
+    //Worker
     implementation(libs.androidx.work.runtime.ktx)
 
     testImplementation(libs.junit)
