@@ -22,7 +22,7 @@
 
         </activity>
 
-        <receiver android:name=".features.widget.presentation.TimeElapsedAppWidgetReceiver" android:exported="true">
+        <receiver android:name=".features.widget.presentation.utils.TimeElapsedAppWidgetReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
