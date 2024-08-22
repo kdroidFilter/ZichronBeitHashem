@@ -1,8 +1,9 @@
-package com.kdroid.zichronbeithashem.features.widget.presentation
+package com.kdroid.zichronbeithashem.features.widget.presentation.utils
 
 import android.content.Context
 import android.util.Log
 import androidx.glance.appwidget.GlanceAppWidgetManager
+import com.kdroid.zichronbeithashem.features.widget.presentation.ui.TimeElapsedWidget
 
 class TimeElapsedWidgetUpdater(val context: Context) {
     suspend fun updateWidget() {

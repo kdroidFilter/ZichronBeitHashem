@@ -1,4 +1,4 @@
-package com.kdroid.zichronbeithashem.features.widget.presentation
+package com.kdroid.zichronbeithashem.features.widget.presentation.ui
 
 import androidx.compose.ui.graphics.Color
 

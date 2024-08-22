@@ -1,4 +1,4 @@
-package com.kdroid.zichronbeithashem.features.widget.presentation
+package com.kdroid.zichronbeithashem.features.widget.presentation.ui
 
 import android.content.Context
 import androidx.compose.material3.MaterialTheme
