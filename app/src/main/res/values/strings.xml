@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">Zichron Beit Hashem</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="MissingTranslation">Zichron Beit Hashem</string>
     <!-- Widget -->
     <string name="time_elapsed_title">Time elapsed since the destruction of the second Beit Hamikdash</string>
     <string name="years">Years</string>
@@ -11,4 +11,5 @@
         <item quantity="one">Day</item>
         <item quantity="other">Days</item>
     </plurals>
+    <string name="rejoice_in_building_text">Show us and make us rejoice in its rebuilding, and restore Your Presence within it.</string>
 </resources>

@@ -10,4 +10,5 @@
         <item quantity="one" tools:ignore="ImpliedQuantity">Jour</item>
         <item quantity="other" tools:ignore="MissingQuantity">Jours</item>
     </plurals>
+    <string name="rejoice_in_building_text">Fais-nous voir et réjouis-nous de sa reconstruction, et fais revenir Ta Présence parmi lui.</string>
 </resources>
