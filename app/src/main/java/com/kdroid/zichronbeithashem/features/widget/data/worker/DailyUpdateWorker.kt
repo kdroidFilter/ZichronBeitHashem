@@ -3,7 +3,7 @@ package com.kdroid.zichronbeithashem.features.widget.data.worker
 import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
-import com.kdroid.zichronbeithashem.features.widget.presentation.TimeElapsedWidgetUpdater
+import com.kdroid.zichronbeithashem.features.widget.presentation.utils.TimeElapsedWidgetUpdater
 
 class DailyUpdateWorker(
     appContext: Context,
