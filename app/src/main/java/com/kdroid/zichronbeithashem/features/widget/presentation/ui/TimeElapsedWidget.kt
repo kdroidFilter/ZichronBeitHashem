@@ -39,13 +39,13 @@ class TimeElapsedWidget : GlanceAppWidget() {
 
     override val sizeMode = SizeMode.Exact
 
-    private val intervalCalculator = DateProviderImpl()
+    private val dateProvider = DateProviderImpl()
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
 
         provideContent {
             GlanceTheme() {
-               TimeElapsedWidget(context = context, timeInterval = intervalCalculator.convertDaysToHebrewYearsMonthsDays())
+               TimeElapsedWidget(context = context, timeInterval = dateProvider.convertDaysToHebrewYearsMonthsDays())
             }
         }
 
