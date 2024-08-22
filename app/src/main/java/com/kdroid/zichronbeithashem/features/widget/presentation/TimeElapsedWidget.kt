@@ -34,15 +34,12 @@ import androidx.glance.unit.ColorProvider
 import com.kdroid.zichronbeithashem.R
 import com.kdroid.zichronbeithashem.core.data.DateProviderImpl
 import com.kdroid.zichronbeithashem.core.domain.model.TimeInterval
-import com.kdroid.zichronbeithashem.core.domain.services.DateProvider
-import org.koin.java.KoinJavaComponent.inject
 
 class TimeElapsedWidget : GlanceAppWidget() {
 
     override val sizeMode = SizeMode.Exact
 
-    private val intervalCalculator: DateProvider by inject(
-        DateProviderImpl::class.java)
+    private val intervalCalculator = DateProviderImpl()
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
 

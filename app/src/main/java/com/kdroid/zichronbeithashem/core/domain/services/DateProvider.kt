@@ -5,6 +5,10 @@ import com.kosherjava.zmanim.hebrewcalendar.JewishDate
 import java.util.Date
 import java.util.concurrent.TimeUnit
 
+/**
+ * Interface for providing date-related functionalities.
+ */
+
 interface DateProvider {
     fun getCurrentJewishDate(): JewishDate
 
@@ -20,6 +24,11 @@ interface DateProvider {
         return TimeUnit.MILLISECONDS.toDays(diffInMillis)
     }
 
+    /**
+     * Converts the number of days since the destruction of the Second Temple into Hebrew years, months, and days.
+     *
+     * @return A [TimeInterval] representing the difference in years, months, and days.
+     */
     fun convertDaysToHebrewYearsMonthsDays(): TimeInterval {
         val currentDate = getCurrentJewishDate()
         val templeDestructionDate = getSecondTempleDestructionDate()

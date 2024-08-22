@@ -10,22 +10,24 @@ import kotlinx.coroutines.launch
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext.startKoin
-import org.koin.java.KoinJavaComponent.inject
 
-class MainApplication : Application(){
+class MainApplication : Application() {
     override fun onCreate() {
-        startKoin{
+        startKoin {
             androidLogger()
             androidContext(this@MainApplication)
             modules(appModule)
         }
-        CoroutineScope(Dispatchers.IO).launch {
-           val timeElapsedWidgetUpdater : TimeElapsedWidgetUpdater by inject(TimeElapsedWidgetUpdater::class.java)
-            timeElapsedWidgetUpdater.updateWidget()
+        if (BuildConfig.DEBUG) {
+            // Refresh widget immediately on app launch (debug mode only)
+            CoroutineScope(Dispatchers.IO).launch {
+                val timeElapsedWidgetUpdater = TimeElapsedWidgetUpdater(applicationContext)
+                timeElapsedWidgetUpdater.updateWidget()
+            }
+
         }
-     //   setupDailyWidgetUpdate(this)
+        // Set up frequent widget updates using a Worker
         setupFrequentWidgetUpdate(this)
         super.onCreate()
-
     }
 }
