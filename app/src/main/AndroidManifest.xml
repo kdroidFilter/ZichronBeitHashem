@@ -19,7 +19,6 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ZichronBeitHashem">
-
         </activity>
 
         <receiver android:name=".features.widget.presentation.utils.TimeElapsedAppWidgetReceiver" android:exported="true">
@@ -31,9 +30,6 @@
                 android:resource="@xml/time_elapsed_widget_info" />
         </receiver>
 
-
     </application>
-
-
 
 </manifest>
