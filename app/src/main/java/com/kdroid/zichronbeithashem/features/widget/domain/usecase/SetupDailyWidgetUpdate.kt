@@ -7,12 +7,12 @@ import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
-import com.kdroid.zichronbeithashem.features.widget.data.worker.DailyUpdateWorker
+import com.kdroid.zichronbeithashem.features.widget.data.worker.WidgetUpdaterWorker
 import java.util.concurrent.TimeUnit
 
 fun setupDailyWidgetUpdate(context: Context) {
     Log.i("DailyUpdater", "Started")
-    val dailyWorkRequest = PeriodicWorkRequestBuilder<DailyUpdateWorker>(1, TimeUnit.DAYS)
+    val dailyWorkRequest = PeriodicWorkRequestBuilder<WidgetUpdaterWorker>(1, TimeUnit.DAYS)
         .setConstraints(
             Constraints.Builder()
                 .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
