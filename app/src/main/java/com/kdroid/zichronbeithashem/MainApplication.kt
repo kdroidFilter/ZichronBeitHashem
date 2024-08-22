@@ -2,7 +2,7 @@ package com.kdroid.zichronbeithashem
 
 import android.app.Application
 import com.kdroid.zichronbeithashem.features.widget.domain.usecase.setupFrequentWidgetUpdate
-import com.kdroid.zichronbeithashem.features.widget.presentation.TimeElapsedWidgetUpdater
+import com.kdroid.zichronbeithashem.features.widget.presentation.utils.TimeElapsedWidgetUpdater
 import com.kdroid.zichronbeithashem.framework.di.appModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -18,12 +18,11 @@ class MainApplication : Application() {
             androidContext(this@MainApplication)
             modules(appModule)
         }
-        if (BuildConfig.DEBUG) {
-            // Refresh widget immediately on app launch (debug mode only)
-            CoroutineScope(Dispatchers.IO).launch {
-                val timeElapsedWidgetUpdater = TimeElapsedWidgetUpdater(applicationContext)
-                timeElapsedWidgetUpdater.updateWidget()
-            }
+
+        // Refresh widget immediately on app launch
+        CoroutineScope(Dispatchers.IO).launch {
+            val timeElapsedWidgetUpdater = TimeElapsedWidgetUpdater(applicationContext)
+            timeElapsedWidgetUpdater.updateWidget()
 
         }
         // Set up frequent widget updates using a Worker
