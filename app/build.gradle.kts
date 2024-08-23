@@ -13,8 +13,8 @@ android {
         applicationId = "com.kdroid.zichronbeithashem"
         minSdk = 24
         targetSdk = 35
-        versionCode = 20242208
-        versionName = "0.2"
+        versionCode = 20242209
+        versionName = "0.2.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
