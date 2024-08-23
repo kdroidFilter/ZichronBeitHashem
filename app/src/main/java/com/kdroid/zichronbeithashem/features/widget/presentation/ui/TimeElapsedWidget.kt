@@ -69,7 +69,8 @@ private fun TimeElapsedWidget(context: Context, timeInterval: TimeInterval) {
         Image(
             provider = ImageProvider(R.drawable.temple_jerusalem_in_fire),
             contentDescription = null,
-            modifier = GlanceModifier.fillMaxSize(),
+            modifier = GlanceModifier
+                .fillMaxSize(),
             contentScale = ContentScale.Crop
         )
         Column(
