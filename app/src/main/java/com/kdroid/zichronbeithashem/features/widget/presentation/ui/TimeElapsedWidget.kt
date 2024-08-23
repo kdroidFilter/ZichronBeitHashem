@@ -25,7 +25,6 @@ import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.fillMaxWidth
 import androidx.glance.layout.height
 import androidx.glance.layout.padding
-import androidx.glance.text.FontStyle
 import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
 import androidx.glance.text.TextAlign
@@ -136,7 +135,6 @@ private fun TimeElapsedWidget(context: Context, timeInterval: TimeInterval) {
                             fontSize = MaterialTheme.typography.titleSmall.fontSize,
                             fontWeight = FontWeight.Bold,
                             textAlign = TextAlign.Center,
-                            fontStyle = FontStyle.Italic
                         ),
                         modifier = transparentBackgroundModifier
                     )
