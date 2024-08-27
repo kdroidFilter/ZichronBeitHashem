@@ -13,7 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
-
-# Ignore Android build and release directories
-app/build/
-app/release/
+mockup
+/mockup
+screenshots
+/screenshots
+/app/build/
+/app/release/

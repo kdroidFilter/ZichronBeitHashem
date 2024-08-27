@@ -31,20 +31,20 @@ import androidx.glance.text.TextAlign
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
 import com.kdroid.zichronbeithashem.R
-import com.kdroid.zichronbeithashem.core.data.DateProviderImpl
-import com.kdroid.zichronbeithashem.core.domain.model.TimeInterval
+import com.kdroid.zichronbeithashem.features.services.dataprovider.data.TimeIntervalProviderImpl
+import com.kdroid.zichronbeithashem.features.services.dataprovider.domain.TimeInterval
 
 class TimeElapsedWidget : GlanceAppWidget() {
 
     override val sizeMode = SizeMode.Exact
 
-    private val dateProvider = DateProviderImpl()
+    private val dateProvider = TimeIntervalProviderImpl()
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
 
         provideContent {
             GlanceTheme() {
-               TimeElapsedWidget(context = context, timeInterval = dateProvider.convertDaysToHebrewYearsMonthsDays())
+               TimeElapsedWidget(context = context, timeInterval = dateProvider.calculateTimeIntervalSinceTempleDestruction())
             }
         }
 
@@ -103,11 +103,14 @@ private fun TimeElapsedWidget(context: Context, timeInterval: TimeInterval) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
-                TimeComponent(
-                    label = context.applicationContext.resources.getString(R.string.years),
+                CountDownComponent(
+                    label = context.applicationContext.resources.getQuantityString(
+                        R.plurals.years,
+                        timeInterval.years
+                    ),
                     value = timeInterval.years,
                 )
-                if (timeInterval.months > 0) TimeComponent(
+                if (timeInterval.months > 0) CountDownComponent(
                     label = context.applicationContext.resources.getQuantityString(
                         R.plurals.months,
                         timeInterval.months
@@ -115,7 +118,7 @@ private fun TimeElapsedWidget(context: Context, timeInterval: TimeInterval) {
                     value = timeInterval.months
                 )
 
-                TimeComponent(
+                CountDownComponent(
                     label = context.applicationContext.resources.getQuantityString(
                         R.plurals.days,
                         timeInterval.days
@@ -147,7 +150,7 @@ private fun TimeElapsedWidget(context: Context, timeInterval: TimeInterval) {
 }
 
 @Composable
-private fun TimeComponent(label: String, value: Int) {
+private fun CountDownComponent(label: String, value: Int) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = GlanceModifier.padding(8.dp)

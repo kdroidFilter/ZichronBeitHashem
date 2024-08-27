@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">זכרון בית ה\'</string>
-
+    <!--Widget-->
     <string name="time_elapsed_title">זמן שחלף מאז חורבן בית המקדש השני</string>
-    <string name="years">שנים</string>
-    <plurals name="months">
+    <plurals name="years" tools:ignore="MissingQuantity">
+        <item quantity="one">שנה</item>
+        <item quantity="other">שנתיים</item>
+    </plurals>
+    <plurals name="months" tools:ignore="MissingQuantity">
         <item quantity="one">חודש</item>
-        <item quantity="two">חודשיים</item>
         <item quantity="other">חודשים</item>
     </plurals>
     <plurals name="days">
@@ -15,4 +17,23 @@
         <item quantity="other">ימים</item>
     </plurals>
     <string name="rejoice_in_building_text">והראנו בבנינו ושמחנו בתיקונו, והשב שכינתך לתוכו.</string>
+
+    <!--Home-->
+    <string name="destruction_title_line_1">מאז חורבן</string>
+    <string name="destruction_title_line_2">הבית המקדש</string>
+    <string name="countdown_message">למרבה הצער, הספירה נמשכת…</string>
+    <plurals name="hours" tools:ignore="MissingQuantity">
+        <item quantity="one">שעה</item>
+        <item quantity="other">שעות</item>
+    </plurals>
+    <plurals name="minutes" tools:ignore="MissingQuantity">
+        <item quantity="one">דקה</item>
+        <item quantity="other">דקות</item>
+    </plurals>
+    <plurals name="secondes" tools:ignore="MissingQuantity">
+        <item quantity="one">שנייה</item>
+        <item quantity="other">שנייות</item>
+    </plurals>
+    <string name="live_button_text">שידור חי</string>
+    <string name="tefilot_button_text">תפילות</string>
 </resources>

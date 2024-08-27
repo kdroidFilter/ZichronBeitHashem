@@ -8,17 +8,20 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.4"
 activityCompose = "1.9.1"
-composeBom = "2024.06.00"
+composeBom = "2024.08.00"
+mockito = "4.8.1"
 uiTextGoogleFonts = "1.6.8"
 koinAndroid = "4.0.0-RC1"
 kotlinxSerializationJson = "1.7.1"
-materialIconsExtended = "1.7.0-beta07"
+materialIconsExtended = "1.7.0-rc01"
 zmanim = "2.5.0"
 kmpWindowsSizeClass = "0.5.0"
 coreSplashscreen = "1.2.0-alpha01"
 datastorePreferences = "1.1.1"
 glancePreview = "1.1.0"
 workRuntimeKtx = "2.9.1"
+adaptiveNavigationSuite = "1.3.0-rc01"
+adaptiveNavigation = "1.0.0-rc01"
 
 
 [libraries]
@@ -47,12 +50,20 @@ koin-core = { module = "io.insert-koin:koin-core" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtx" }
 androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockito" }
 zmanim = { module = "com.kosherjava:zmanim", version.ref = "zmanim" }
 kmp-windows-size = {module = "dev.chrisbanes.material3:material3-window-size-class-multiplatform", version.ref= "kmpWindowsSizeClass"}
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 androidx-glance-preview = { group = "androidx.glance", name = "glance-preview", version.ref = "glancePreview" }
 androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workRuntimeKtx" }
+
+androidx-compose-material3-adaptive = { module = "androidx.compose.material3.adaptive:adaptive", version.ref = "adaptiveNavigation" }
+androidx-compose-material3-adaptive-navigation = { module = "androidx.compose.material3.adaptive:adaptive-navigation", version.ref = "adaptiveNavigation" }
+androidx-compose-material3-adaptive-navigation-suite = { module = "androidx.compose.material3:material3-adaptive-navigation-suite", version.ref = "adaptiveNavigationSuite" }
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

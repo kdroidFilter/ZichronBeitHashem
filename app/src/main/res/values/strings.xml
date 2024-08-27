@@ -1,8 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" tools:ignore="MissingTranslation">Zichron Beit Hashem</string>
+
     <!-- Widget -->
     <string name="time_elapsed_title">Time elapsed since the destruction of the second Beit Hamikdash</string>
-    <string name="years">Years</string>
+    <plurals name="years">
+        <item quantity="one">Year</item>
+        <item quantity="other">Years</item>
+    </plurals>
     <plurals name="months">
         <item quantity="one">Month</item>
         <item quantity="other">Months</item>
@@ -12,4 +16,24 @@
         <item quantity="other">Days</item>
     </plurals>
     <string name="rejoice_in_building_text">Show us and make us rejoice in its rebuilding, and restore Your Presence within it.</string>
+
+    <!--Home-->
+    <string name="destruction_title_line_1">Since the destruction</string>
+    <string name="destruction_title_line_2">of the Beit Hamikdash</string>
+    <string name="countdown_message">Unfortunately, the countdown continues…</string>
+    <plurals name="hours">
+        <item quantity="one">Hour</item>
+        <item quantity="other">Hours</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="one">Minute</item>
+        <item quantity="other">Minutes</item>
+    </plurals>
+    <plurals name="secondes">
+        <item quantity="one">Seconde</item>
+        <item quantity="other">Secondes</item>
+    </plurals>
+    <string name="live_button_text">Live</string>
+    <string name="tefilot_button_text">Tefilot</string>
+
 </resources>

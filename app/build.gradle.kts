@@ -13,8 +13,8 @@ android {
         applicationId = "com.kdroid.zichronbeithashem"
         minSdk = 24
         targetSdk = 35
-        versionCode = 20242209
-        versionName = "0.2.1"
+        versionCode = 20242709
+        versionName = "0.2.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -80,7 +80,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     //Navigation
-    implementation(libs.koin.androidx.compose.navigation)
+   // implementation(libs.navigation.compose)
+   // implementation(libs.koin.androidx.compose.navigation)
 
     //Serialization
     implementation(libs.kotlinx.serialization.json)
@@ -106,7 +107,18 @@ dependencies {
     //Worker
     implementation(libs.androidx.work.runtime.ktx)
 
+    //Navigation
+    implementation(libs.androidx.compose.material3.adaptive.navigation.suite)
+    implementation(libs.androidx.compose.material3.adaptive.navigation)
+    implementation(libs.androidx.compose.material3.adaptive)
+
+
+
+
     testImplementation(libs.junit)
+    testImplementation (libs.mockito.core)
+    testImplementation (libs.mockito.inline)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
