@@ -64,7 +64,7 @@ class HomeViewModel : ViewModel() {
             }
 
             is HomeEvents.onLiveClick -> {
-                events.mainNavigationState?.listDetailPaneScaffoldNavigator?.navigateTo(
+                events.mainNavigationState?.navigator?.navigateTo(
                     pane = ListDetailPaneScaffoldRole.Detail,
                     content = MainNavGraph.Live.toString()
                 )
@@ -72,7 +72,7 @@ class HomeViewModel : ViewModel() {
             }
 
             is HomeEvents.onTefilotClick -> {
-                events.mainNavigationState?.listDetailPaneScaffoldNavigator?.navigateTo(
+                events.mainNavigationState?.navigator?.navigateTo(
                     pane = ListDetailPaneScaffoldRole.Detail,
                     content = MainNavGraph.Tefilot.toString()
                 )
@@ -81,7 +81,7 @@ class HomeViewModel : ViewModel() {
             }
 
             is HomeEvents.onSettingsClick -> {
-                events.mainNavigationState?.listDetailPaneScaffoldNavigator?.navigateTo(
+                events.mainNavigationState?.navigator?.navigateTo(
                     pane = ListDetailPaneScaffoldRole.Detail,
                     content = MainNavGraph.Settings.toString()
                 )

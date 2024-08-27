@@ -7,12 +7,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.VolumeDown
-import androidx.compose.material.icons.automirrored.filled.VolumeOff
-import androidx.compose.material.icons.automirrored.filled.VolumeUp
-import androidx.compose.material.icons.filled.Pause
-import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.automirrored.outlined.VolumeDown
+import androidx.compose.material.icons.automirrored.outlined.VolumeOff
+import androidx.compose.material.icons.automirrored.outlined.VolumeUp
+import androidx.compose.material.icons.outlined.Pause
+import androidx.compose.material.icons.outlined.PlayArrow
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -28,23 +28,23 @@ import com.kdroid.zichronbeithashem.features.screens.home.HomeState
 fun SettingsBar(homeState: HomeState, onEvent : (HomeEvents) -> Unit) {
     val audioPlayerState = homeState.audioPlayerState
     val volumeicon = when {
-        audioPlayerState.isMuted -> Icons.AutoMirrored.Filled.VolumeOff
-        audioPlayerState.isMaxVolume -> Icons.AutoMirrored.Filled.VolumeUp
-        else -> Icons.AutoMirrored.Filled.VolumeDown
+        audioPlayerState.isMuted -> Icons.AutoMirrored.Outlined.VolumeOff
+        audioPlayerState.isMaxVolume -> Icons.AutoMirrored.Outlined.VolumeUp
+        else -> Icons.AutoMirrored.Outlined.VolumeDown
     }
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 24.dp),
+            .padding(horizontal = 30.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
 
         IconButton(onClick = { onEvent(HomeEvents.onPlayButtonClicked) }) {
             if (!audioPlayerState.isPlaying)
-                Icon(Icons.Default.PlayArrow, contentDescription = null)
+                Icon(Icons.Outlined.PlayArrow, contentDescription = null)
             else
-                Icon(Icons.Default.Pause, contentDescription = null )
+                Icon(Icons.Outlined.Pause, contentDescription = null )
         }
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -60,7 +60,7 @@ fun SettingsBar(homeState: HomeState, onEvent : (HomeEvents) -> Unit) {
             )
         }
         IconButton(onClick = { onEvent(HomeEvents.onSettingsClick(mainNavigationState = homeState.mainNavigationState)) }) {
-            Icon(Icons.Default.Settings, contentDescription = null)
+            Icon(Icons.Outlined.Settings, contentDescription = null)
         }
     }
 }

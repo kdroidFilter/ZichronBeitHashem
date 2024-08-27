@@ -20,7 +20,7 @@ import com.kdroid.zichronbeithashem.features.screens.tefilots.Tefilots
 
 @OptIn(ExperimentalMaterial3AdaptiveApi::class)
 data class MainNavigationState(
-    val listDetailPaneScaffoldNavigator: ThreePaneScaffoldNavigator<Any>,
+    val navigator: ThreePaneScaffoldNavigator<Any>,
 )
 
 @OptIn(ExperimentalMaterial3AdaptiveApi::class)
@@ -48,8 +48,9 @@ fun MainNavHost() {
 
             AnimatedPane {
                 when (lastContent) {
-                    MainNavGraph.Loading.toString(), MainNavGraph.Tefilot.toString() -> {Tefilots()}
-                    MainNavGraph.Live.toString() -> Live()
+                    MainNavGraph.Loading.toString(),
+                    MainNavGraph.Tefilot.toString() -> { Tefilots() }
+                    MainNavGraph.Live.toString() -> Live(mainNavigationState)
                     MainNavGraph.Settings.toString() -> Settings()
                 }
             }
