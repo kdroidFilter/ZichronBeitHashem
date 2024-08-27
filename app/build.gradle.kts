@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.kdroid.zichronbeithashem"
-        minSdk = 24
+        minSdk = 28
         targetSdk = 35
         versionCode = 20242709
         versionName = "0.2.2"
