@@ -17,9 +17,11 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.kdroid.zichronbeithashem.R
 import com.kdroid.zichronbeithashem.core.presentation.screensize.ScreenSize
@@ -38,30 +40,30 @@ fun CountDownRow(
 ) {
 
     @Composable
-    fun Row1() {
-        CountDownComponents(timeInterval.years, R.plurals.years)
+    fun YearsMonthsDays() {
+        CountDownComponents(screenSize, timeInterval.years, R.plurals.years)
         if (timeInterval.months > 0) {
-            CountDownComponents(timeInterval.months, R.plurals.months)
+            CountDownComponents(screenSize, timeInterval.months, R.plurals.months)
         }
-        CountDownComponents(timeInterval.days, R.plurals.days)
+        CountDownComponents(screenSize, timeInterval.days, R.plurals.days)
     }
 
     @Composable
-    fun Row2() {
-        CountDownComponents(timeInterval.hours, R.plurals.hours)
-        CountDownComponents(timeInterval.minutes, R.plurals.minutes)
-        CountDownComponents(timeInterval.secondes, R.plurals.secondes)
+    fun HoursMinutesSeconds() {
+        CountDownComponents(screenSize, timeInterval.hours, R.plurals.hours)
+        CountDownComponents(screenSize, timeInterval.minutes, R.plurals.minutes)
+        CountDownComponents(screenSize, timeInterval.secondes, R.plurals.secondes)
     }
 
     @Composable
-    fun BigCountDown() {
+    fun TwoLinesCountDown() {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 8.dp),
             horizontalArrangement = Arrangement.SpaceAround
         ) {
-            Row1()
+            YearsMonthsDays()
         }
 
         Row(
@@ -70,77 +72,153 @@ fun CountDownRow(
                 .padding(horizontal = 8.dp),
             horizontalArrangement = Arrangement.SpaceAround
         ) {
-            Row2()
+            HoursMinutesSeconds()
+        }
+    }
+
+    @Composable
+    fun OneLineCountDown() {
+        Row(
+            modifier = Modifier,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            YearsMonthsDays()
+            HoursMinutesSeconds()
         }
     }
 
     when (screenSize) {
-
-        VERY_BIG -> {
-            BigCountDown()
+        VERY_BIG, BIG -> {
+            TwoLinesCountDown()
         }
 
-        BIG -> {
-            BigCountDown()
-
+        MEDIUM, SMALL, VERY_SMALL -> {
+            OneLineCountDown()
         }
-
-        MEDIUM -> {
-
-        }
-
-        SMALL -> {
-
-        }
-
-        VERY_SMALL -> {
-
-        }
-
     }
 
 
 }
 
 @Composable
-private fun CountDownComponents(number: Int, text: Int) {
+private fun CountDownComponents(screenSize: ScreenSize, number: Int, text: Int) {
+
+    val fontFamily = FontFamily((Font(R.font.suezone))) //TODO Include them into the App Theme by Default
+
+    //Container
+    val columnWidth: Dp
+    //Icon
+    val spacerWidth : Dp
+    val iconWidth : Dp
+    val iconHeight : Dp
+    val iconTranslationY : Float
+    //Number
+    val numberStyle : TextStyle
+    //Text
+    val textStyle : TextStyle
+
+
+    when (screenSize) {
+        /*
+        VERY_SMALL -> {
+            columnWidth = 80.dp
+            spacerWidth = .dp
+            iconWidth = .dp
+            iconHeight = .dp
+            iconTranslationY = f
+            numberStyle = MaterialTheme.typography.
+            textStyle = MaterialTheme.typography.
+        }
+        SMALL -> {
+            columnWidth = 80.dp
+            spacerWidth = .dp
+                    iconWidth = .dp
+                    iconHeight = .dp
+                    iconTranslationY = f
+            numberStyle = MaterialTheme.typography.
+            textStyle = MaterialTheme.typography.
+        }
+        MEDIUM -> {
+            columnWidth = 80.dp
+            spacerWidth = .dp
+                    iconWidth = .dp
+                    iconHeight = .dp
+                    iconTranslationY = f
+            numberStyle = MaterialTheme.typography.
+            textStyle = MaterialTheme.typography.
+        }
+
+         */
+        BIG -> {
+            columnWidth = 80.dp
+            spacerWidth = 10.dp
+            iconWidth = 60.dp
+            iconHeight = 25.dp
+            iconTranslationY = 30f
+            numberStyle = MaterialTheme.typography.headlineLarge
+            textStyle = MaterialTheme.typography.titleSmall
+        }
+        /*
+        VERY_BIG -> {
+            columnWidth = 80.dp
+            spacerWidth = .dp
+                    iconWidth = .dp
+                    iconHeight = .dp
+                    iconTranslationY = f
+            numberStyle = MaterialTheme.typography.
+            textStyle = MaterialTheme.typography.
+        }
+         */
+
+        else -> {
+            //TODO Adapt the counterDownComponent to be responsive
+            columnWidth = 80.dp
+            spacerWidth = 10.dp
+            iconWidth = 60.dp
+            iconHeight = 25.dp
+            iconTranslationY = 30f
+            numberStyle = MaterialTheme.typography.headlineLarge
+            textStyle = MaterialTheme.typography.titleSmall
+        }
+    }
+
     Column(
-        modifier = Modifier.width(80.dp)
+        modifier = Modifier.width(columnWidth)
     ) {
         Row(
-            modifier = Modifier.width(80.dp)
+            modifier = Modifier.fillMaxWidth()
         ) {
-            Spacer(modifier = Modifier.width(10.dp))
+            Spacer(modifier = Modifier.width(spacerWidth))
             Image(
                 painter = painterResource(id = R.drawable.timer_icon),
                 contentDescription = null,
                 modifier = Modifier
-                    .width(60.dp)
-                    .height(25.dp)
+                    .width(iconWidth)
+                    .height(iconHeight)
                     .graphicsLayer(
-                        translationY = 30f,
+                        translationY = iconTranslationY,
                     ),
                 contentScale = ContentScale.FillBounds
             )
         }
         Row(
-            modifier = Modifier.width(80.dp)
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text(
                 text = "$number",
-                style = MaterialTheme.typography.headlineLarge,
-                fontFamily = FontFamily((Font(R.font.suezone))),
+                style = numberStyle,
+                fontFamily = fontFamily,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
             )
         }
         Row(
-            modifier = Modifier.width(80.dp)
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text(
                 text = pluralStringResource(id = text, count = number),
-                fontFamily = FontFamily((Font(R.font.suezone))),
-                style = MaterialTheme.typography.titleSmall,
+                fontFamily = fontFamily,
+                style = textStyle,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
             )
