@@ -103,7 +103,6 @@ fun Parchemin(
                     Text(
                         text = stringResource(id = R.string.rejoice_in_building_text),
                         modifier = Modifier,
-                        fontFamily = FontFamily((Font(R.font.suezone))),
                         textAlign = TextAlign.Center,
                         style = MaterialTheme.typography.titleMedium
                     )

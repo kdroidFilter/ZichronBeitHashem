@@ -1,4 +1,4 @@
-package com.kdroid.zichronbeithashem.features.components.ornements
+package com.kdroid.zichronbeithashem.features.screens.home.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -21,45 +21,45 @@ import com.kdroid.zichronbeithashem.R
 import com.kdroid.zichronbeithashem.core.presentation.screensize.ScreenSize
 import com.kdroid.zichronbeithashem.core.presentation.screensize.ScreenSize.VERY_SMALL
 
-data class AdaptedOrnement(
+data class AdaptedBorders(
     val size: Int,
     val translationX: Float,
     val translationY: Float,
     val rotationZ: Float,
 )
 
-private fun getAdaptedOrnement(screenSize: ScreenSize): AdaptedOrnement {
-    val ornementSize: Int
-    val ornementTranslationX: Float
-    val ornementTranslationY: Float
-    val ornementRotationZ = 12f
+private fun getAdaptedBorders(screenSize: ScreenSize): AdaptedBorders {
+    val borderSize: Int
+    val borderTranslationX: Float
+    val borderTranslationY: Float
+    val borderRotationZ = 12f
 
     when (screenSize) {
         VERY_SMALL -> {
-            ornementSize = 120
-            ornementTranslationX = 90f
-            ornementTranslationY = 30f
+            borderSize = 120
+            borderTranslationX = 90f
+            borderTranslationY = 30f
         }
         else -> {
-            ornementSize = 220
-            ornementTranslationX = 150f
-            ornementTranslationY = 60f
+            borderSize = 220
+            borderTranslationX = 150f
+            borderTranslationY = 60f
         }
     }
 
-    return AdaptedOrnement(
-        ornementSize,
-        ornementTranslationX,
-        ornementTranslationY,
-        ornementRotationZ
+    return AdaptedBorders(
+        borderSize,
+        borderTranslationX,
+        borderTranslationY,
+        borderRotationZ
     )
 }
 
-class Ornements(screenSize: ScreenSize) {
+class Borders(screenSize: ScreenSize) {
     private val darkOrnementRes = R.drawable.ornement_dark
     private val lightOrnementRes = R.drawable.ornement_light
 
-    private val adaptedOrnement = getAdaptedOrnement(screenSize)
+    private val adaptedBorders = getAdaptedBorders(screenSize)
 
 
     @Composable
@@ -85,13 +85,13 @@ class Ornements(screenSize: ScreenSize) {
             painter = painterResource(id = lightOrnementRes),
             contentDescription = null,
             modifier = modifier
-                .size(adaptedOrnement.size.dp)
+                .size(adaptedBorders.size.dp)
                 .rotate(180f)
                 .graphicsLayer(
                     scaleX = inverseIfRtl(-1f),
-                    translationX = inverseIfRtl(adaptedOrnement.translationX),
-                    translationY = adaptedOrnement.translationY,
-                    rotationZ = inverseIfRtl(adaptedOrnement.rotationZ)
+                    translationX = inverseIfRtl(adaptedBorders.translationX),
+                    translationY = adaptedBorders.translationY,
+                    rotationZ = inverseIfRtl(adaptedBorders.rotationZ)
                 )
 
         )
@@ -104,13 +104,13 @@ class Ornements(screenSize: ScreenSize) {
             painter = painterResource(id = lightOrnementRes),
             contentDescription = null,
             modifier = modifier
-                .size(adaptedOrnement.size.dp)
+                .size(adaptedBorders.size.dp)
                 .rotate(180f)
                 .graphicsLayer(
                     scaleX = inverseIfRtl(1f),
-                    translationX = inverseIfRtl(-adaptedOrnement.translationX),
-                    translationY = adaptedOrnement.translationY,
-                    rotationZ = inverseIfRtl(-adaptedOrnement.rotationZ)
+                    translationX = inverseIfRtl(-adaptedBorders.translationX),
+                    translationY = adaptedBorders.translationY,
+                    rotationZ = inverseIfRtl(-adaptedBorders.rotationZ)
                 )
 
         )
@@ -123,13 +123,13 @@ class Ornements(screenSize: ScreenSize) {
             painter = painterResource(id = darkOrnementRes),
             contentDescription = null,
             modifier = modifier
-                .size(adaptedOrnement.size.dp)
+                .size(adaptedBorders.size.dp)
                 .rotate(0f)
                 .graphicsLayer(
                     scaleX = inverseIfRtl(1f),
-                    translationX = inverseIfRtl(-adaptedOrnement.translationX),
-                    translationY = adaptedOrnement.translationY,
-                    rotationZ = inverseIfRtl(-adaptedOrnement.rotationZ)
+                    translationX = inverseIfRtl(-adaptedBorders.translationX),
+                    translationY = adaptedBorders.translationY,
+                    rotationZ = inverseIfRtl(-adaptedBorders.rotationZ)
                 )
 
         )
@@ -143,13 +143,13 @@ class Ornements(screenSize: ScreenSize) {
             painter = painterResource(id = darkOrnementRes),
             contentDescription = null,
             modifier = modifier
-                .size(adaptedOrnement.size.dp)
+                .size(adaptedBorders.size.dp)
                 .rotate(0f)
                 .graphicsLayer(
                     scaleX = inverseIfRtl(-1f),
-                    translationX = inverseIfRtl(adaptedOrnement.translationX),
-                    translationY = adaptedOrnement.translationY,
-                    rotationZ = inverseIfRtl(adaptedOrnement.rotationZ)
+                    translationX = inverseIfRtl(adaptedBorders.translationX),
+                    translationY = adaptedBorders.translationY,
+                    rotationZ = inverseIfRtl(adaptedBorders.rotationZ)
                 )
 
         )

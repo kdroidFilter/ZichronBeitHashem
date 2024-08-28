@@ -84,7 +84,6 @@ fun Header(
                 text = "$pastedYears",
                 style = yearsCountStyle,
                 textAlign = TextAlign.Center,
-                fontFamily = FontFamily((Font(R.font.suezone))),
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(end = 5.dp)
             )
@@ -100,7 +99,6 @@ fun Header(
                 text = stringResource(id = R.string.destruction_title_line_1),
                 style = firstTitleLineStyle,
                 color = Color.Black,
-                fontFamily = FontFamily((Font(R.font.suezone))),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -110,7 +108,6 @@ fun Header(
                 text = stringResource(id = R.string.destruction_title_line_2),
                 style = secondTitleLineStyle,
                 color = Color.Black,
-                fontFamily = FontFamily((Font(R.font.suezone))),
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .fillMaxWidth()

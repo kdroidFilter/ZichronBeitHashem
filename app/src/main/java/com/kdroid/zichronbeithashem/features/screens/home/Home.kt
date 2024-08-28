@@ -19,7 +19,7 @@ import com.kdroid.zichronbeithashem.R
 import com.kdroid.zichronbeithashem.core.presentation.navigation.MainNavigationState
 import com.kdroid.zichronbeithashem.core.presentation.screensize.determineScreenSize
 import com.kdroid.zichronbeithashem.core.presentation.theme.AppTheme
-import com.kdroid.zichronbeithashem.features.components.ornements.Ornements
+import com.kdroid.zichronbeithashem.features.screens.home.components.Borders
 import com.kdroid.zichronbeithashem.features.screens.home.components.header.Header
 import com.kdroid.zichronbeithashem.features.screens.home.components.parchemin.Parchemin
 import org.koin.androidx.compose.koinViewModel
@@ -52,7 +52,7 @@ private fun HomeScreen(homeState: HomeState, onEvent: (HomeEvents) -> Unit) {
                         alignment = alignment
                     )
             ) {
-                Ornements(screenSize).Display()
+                Borders(screenSize).Display()
                 Header(
                     paddingValues = paddingValues,
                     screenSize = screenSize,

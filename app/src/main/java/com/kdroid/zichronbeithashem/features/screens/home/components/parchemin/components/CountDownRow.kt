@@ -16,8 +16,6 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -74,10 +72,6 @@ private fun HoursMinutesSeconds(timeInterval: TimeInterval, ratio: Float) {
 
 @Composable
 private fun CountDownComponents(number: Int, text: Int, ratio: Float = 1f) {
-    val fontFamily =
-        FontFamily((Font(R.font.suezone))) //TODO Include them into the App Theme by Default
-
-
         Column(
             modifier = Modifier
                 .width((82/ratio).dp)
@@ -93,7 +87,7 @@ private fun CountDownComponents(number: Int, text: Int, ratio: Float = 1f) {
                         .width((60/ratio).dp)
                         .height((25/ratio).dp)
                         .graphicsLayer(
-                            translationY = (30/ratio).toFloat(),
+                            translationY = (30/ratio),
                         ),
                     contentScale = ContentScale.FillBounds
                 )
@@ -104,7 +98,6 @@ private fun CountDownComponents(number: Int, text: Int, ratio: Float = 1f) {
                 Text(
                     text = "$number",
                     fontSize = (32/ratio).sp,
-                    fontFamily = fontFamily,
                     textAlign = TextAlign.Center,
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -114,7 +107,6 @@ private fun CountDownComponents(number: Int, text: Int, ratio: Float = 1f) {
             ) {
                 Text(
                     text = pluralStringResource(id = text, count = number),
-                    fontFamily = fontFamily,
                     fontSize = (14/ratio).sp,
                     textAlign = TextAlign.Center,
                     modifier = Modifier.fillMaxWidth()
