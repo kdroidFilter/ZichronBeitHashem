@@ -112,7 +112,12 @@ fun Parchemin(
                 SettingsBar(homeState = homeState, onEvent = onEvent)
             }
             item {
-                Spacer(modifier = Modifier.height(30.dp))
+               val spacerHeight = when (screenSize) {
+                    ScreenSize.VERY_SMALL, ScreenSize.SMALL -> 60.dp
+                   ScreenSize.MEDIUM -> 50.dp
+                   else -> 40.dp
+                }
+                Spacer(modifier = Modifier.height(spacerHeight))
             }
         }
     }
