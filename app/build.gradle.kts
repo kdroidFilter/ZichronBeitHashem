@@ -79,10 +79,6 @@ dependencies {
     //ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
-    //Navigation
-   // implementation(libs.navigation.compose)
-   // implementation(libs.koin.androidx.compose.navigation)
-
     //Serialization
     implementation(libs.kotlinx.serialization.json)
 
@@ -110,11 +106,19 @@ dependencies {
     implementation(libs.androidx.work.runtime.ktx)
 
     //Navigation
+    // implementation(libs.navigation.compose)
+    // implementation(libs.koin.androidx.compose.navigation)
     implementation(libs.androidx.compose.material3.adaptive.navigation.suite)
     implementation(libs.androidx.compose.material3.adaptive.navigation)
     implementation(libs.androidx.compose.material3.adaptive)
 
 
+    //Media Player
+     implementation(libs.compose.video)
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.session)
+    implementation(libs.androidx.media3.ui)
+    implementation(libs.androidx.media3.exoplayer.hls)
 
 
     testImplementation(libs.junit)

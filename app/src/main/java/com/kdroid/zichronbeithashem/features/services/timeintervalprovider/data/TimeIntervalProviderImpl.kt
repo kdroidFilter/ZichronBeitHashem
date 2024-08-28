@@ -1,6 +1,6 @@
-package com.kdroid.zichronbeithashem.features.services.dataprovider.data
+package com.kdroid.zichronbeithashem.features.services.timeintervalprovider.data
 
-import com.kdroid.zichronbeithashem.features.services.dataprovider.domain.TimeIntervalProvider
+import com.kdroid.zichronbeithashem.features.services.timeintervalprovider.domain.TimeIntervalProvider
 import com.kosherjava.zmanim.ComplexZmanimCalendar
 import com.kosherjava.zmanim.hebrewcalendar.JewishDate
 import com.kosherjava.zmanim.util.GeoLocation

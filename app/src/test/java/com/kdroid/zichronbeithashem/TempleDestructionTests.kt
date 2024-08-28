@@ -1,6 +1,6 @@
 package com.kdroid.zichronbeithashem
 
-import com.kdroid.zichronbeithashem.features.services.dataprovider.data.TimeIntervalProviderImpl
+import com.kdroid.zichronbeithashem.features.services.timeintervalprovider.data.TimeIntervalProviderImpl
 import com.kosherjava.zmanim.hebrewcalendar.JewishDate
 import org.junit.Assert.assertEquals
 import org.junit.Test

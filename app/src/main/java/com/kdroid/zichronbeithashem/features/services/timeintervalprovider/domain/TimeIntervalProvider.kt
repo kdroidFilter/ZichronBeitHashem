@@ -1,4 +1,4 @@
-package com.kdroid.zichronbeithashem.features.services.dataprovider.domain
+package com.kdroid.zichronbeithashem.features.services.timeintervalprovider.domain
 
 import com.kosherjava.zmanim.hebrewcalendar.JewishDate
 import java.util.Date

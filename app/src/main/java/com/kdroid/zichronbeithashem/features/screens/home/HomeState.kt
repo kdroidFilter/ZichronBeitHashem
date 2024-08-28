@@ -3,7 +3,7 @@ package com.kdroid.zichronbeithashem.features.screens.home
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.kdroid.zichronbeithashem.core.presentation.navigation.MainNavigationState
-import com.kdroid.zichronbeithashem.features.services.dataprovider.domain.TimeInterval
+import com.kdroid.zichronbeithashem.features.services.timeintervalprovider.domain.TimeInterval
 
 data class AudioPlayerState(
     val isPlaying: Boolean,

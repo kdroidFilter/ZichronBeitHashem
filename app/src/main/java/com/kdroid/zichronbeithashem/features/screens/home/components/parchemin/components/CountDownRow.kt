@@ -22,7 +22,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kdroid.zichronbeithashem.R
-import com.kdroid.zichronbeithashem.features.services.dataprovider.domain.TimeInterval
+import com.kdroid.zichronbeithashem.features.services.timeintervalprovider.domain.TimeInterval
 
 
 @Composable

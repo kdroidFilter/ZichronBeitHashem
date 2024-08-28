@@ -31,8 +31,8 @@ import androidx.glance.text.TextAlign
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
 import com.kdroid.zichronbeithashem.R
-import com.kdroid.zichronbeithashem.features.services.dataprovider.data.TimeIntervalProviderImpl
-import com.kdroid.zichronbeithashem.features.services.dataprovider.domain.TimeInterval
+import com.kdroid.zichronbeithashem.features.services.timeintervalprovider.data.TimeIntervalProviderImpl
+import com.kdroid.zichronbeithashem.features.services.timeintervalprovider.domain.TimeInterval
 
 class TimeElapsedWidget : GlanceAppWidget() {
 

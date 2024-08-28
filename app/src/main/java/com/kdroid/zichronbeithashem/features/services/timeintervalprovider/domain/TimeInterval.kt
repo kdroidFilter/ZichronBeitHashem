@@ -1,4 +1,4 @@
-package com.kdroid.zichronbeithashem.features.services.dataprovider.domain
+package com.kdroid.zichronbeithashem.features.services.timeintervalprovider.domain
 
 import kotlinx.serialization.Serializable
 

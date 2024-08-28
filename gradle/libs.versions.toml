@@ -1,5 +1,6 @@
 [versions]
 agp = "8.5.2"
+composeVideo = "1.2.0"
 glance = "1.1.0"
 kotlin = "2.0.0"
 coreKtx = "1.13.1"
@@ -9,6 +10,7 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.4"
 activityCompose = "1.9.1"
 composeBom = "2024.08.00"
+media3Exoplayer = "1.4.1"
 mockito = "4.8.1"
 uiTextGoogleFonts = "1.6.8"
 koinAndroid = "4.0.0-RC1"
@@ -26,6 +28,11 @@ adaptiveNavigation = "1.0.0-rc01"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-media3-exoplayer = { module = "androidx.media3:media3-exoplayer", version.ref = "media3Exoplayer" }
+androidx-media3-exoplayer-hls = { module = "androidx.media3:media3-exoplayer-hls", version.ref = "media3Exoplayer" }
+androidx-media3-session = { module = "androidx.media3:media3-session", version.ref = "media3Exoplayer" }
+androidx-media3-ui = { module = "androidx.media3:media3-ui", version.ref = "media3Exoplayer" }
+compose-video = { module = "io.sanghun:compose-video", version.ref = "composeVideo" }
 glance-appwidget = { group = "androidx.glance", name = "glance-appwidget", version.ref = "glance" }
 glance-material = { group = "androidx.glance", name = "glance-material3", version.ref = "glance" }
 glance-preview = { group = "androidx.glance", name = "glance-appwidget-preview", version.ref = "glance" }

@@ -17,7 +17,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.media3.common.util.UnstableApi
 import com.kdroid.zichronbeithashem.core.presentation.navigation.MainNavigationState
+import com.kdroid.zichronbeithashem.features.screens.live.components.VideoPlayerWithCards
 import org.koin.androidx.compose.koinViewModel
 
 
@@ -32,6 +35,7 @@ fun Live(mainNavigationState: MainNavigationState) {
     )
 }
 
+@androidx.annotation.OptIn(UnstableApi::class)
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3AdaptiveApi::class)
 @Composable
 private fun LiveScreen(onEvent: (LiveEvents) -> Unit, liveState: LiveState) {
@@ -55,11 +59,12 @@ private fun LiveScreen(onEvent: (LiveEvents) -> Unit, liveState: LiveState) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValues),
+                .padding(paddingValues)
+                .padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "LiveScreen")
+            VideoPlayerWithCards()
+            }
         }
-    }
 }

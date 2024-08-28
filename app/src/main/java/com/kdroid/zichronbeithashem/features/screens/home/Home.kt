@@ -35,7 +35,7 @@ fun Home(navigationState: MainNavigationState) {
 
 @Composable
 private fun HomeScreen(homeState: HomeState, onEvent: (HomeEvents) -> Unit) {
-    Scaffold { paddingValues ->
+    Scaffold{ paddingValues ->
         BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
             val screenSize = determineScreenSize(maxHeight, maxWidth)
             val alignment = if (maxHeight < 700.dp || maxWidth / maxHeight > 0.65f) {
@@ -48,7 +48,7 @@ private fun HomeScreen(homeState: HomeState, onEvent: (HomeEvents) -> Unit) {
                     .fillMaxSize()
                     .paint(
                         painter = painterResource(id = R.drawable.background),
-                        contentScale = ContentScale.FillBounds,
+                        contentScale = ContentScale.FillWidth,
                         alignment = alignment
                     )
             ) {
