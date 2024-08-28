@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 20242209,
-      "versionName": "0.2.1",
-      "outputFile": "com.kdroid.zichronbeithashem(0.2.1)-release.apk"
+      "versionCode": 20242709,
+      "versionName": "0.2.2",
+      "outputFile": "com.kdroid.zichronbeithashem(0.2.2)-release.apk"
     }
   ],
   "elementType": "File",
@@ -22,16 +22,16 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/com.kdroid.zichronbeithashem(0.2.1)-release.dm"
+        "baselineProfiles/1/com.kdroid.zichronbeithashem(0.2.2)-release.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/com.kdroid.zichronbeithashem(0.2.1)-release.dm"
+        "baselineProfiles/0/com.kdroid.zichronbeithashem(0.2.2)-release.dm"
       ]
     }
   ],
-  "minSdkVersionForDexing": 24
+  "minSdkVersionForDexing": 28
 }
