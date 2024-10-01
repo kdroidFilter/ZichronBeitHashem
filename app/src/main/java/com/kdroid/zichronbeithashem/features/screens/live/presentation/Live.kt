@@ -1,4 +1,4 @@
-package com.kdroid.zichronbeithashem.features.screens.live
+package com.kdroid.zichronbeithashem.features.screens.live.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,7 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.util.UnstableApi
 import com.kdroid.zichronbeithashem.core.presentation.navigation.MainNavigationState
-import com.kdroid.zichronbeithashem.features.screens.live.components.VideoPlayerWithCards
+import com.kdroid.zichronbeithashem.features.screens.live.presentation.components.VideoPlayerWithCards
 import org.koin.androidx.compose.koinViewModel
 
 
@@ -61,7 +61,7 @@ private fun LiveScreen(onEvent: (LiveEvents) -> Unit, liveState: LiveState) {
                 .fillMaxSize()
                 .padding(paddingValues)
                 .padding(horizontal = 16.dp),
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             VideoPlayerWithCards()

@@ -120,7 +120,7 @@ dependencies {
     implementation(libs.androidx.media3.ui)
     implementation(libs.androidx.media3.exoplayer.hls)
 
-
+    
     testImplementation(libs.junit)
     testImplementation (libs.mockito.core)
     testImplementation (libs.mockito.inline)

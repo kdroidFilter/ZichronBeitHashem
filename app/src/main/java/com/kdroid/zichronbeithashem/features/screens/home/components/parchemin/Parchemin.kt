@@ -23,8 +23,6 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.kdroid.zichronbeithashem.R
@@ -56,20 +54,29 @@ fun Parchemin(
                     contentScale = ContentScale.Crop,
                     alignment = Alignment.TopCenter
                 )
-                .padding(horizontal = 8.dp)
+                .padding(horizontal = 16.dp)
                 .graphicsLayer(translationY = 60f),
-            verticalArrangement = Arrangement.SpaceEvenly,
+            verticalArrangement = Arrangement.SpaceBetween,
         ) {
             item {
+                Spacer(modifier = Modifier.height(
+                    when (screenSize) {
+                        ScreenSize.VERY_BIG -> 45.dp
+                        else -> 15.dp
+                    }
+                ))
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceAround
                 ) {
                     Text(
                         text = stringResource(id = R.string.countdown_message),
-                        fontFamily = FontFamily((Font(R.font.suezone))),
                         textAlign = TextAlign.Center,
-                        style = MaterialTheme.typography.titleLarge,
+                        style = when (screenSize) {
+                            ScreenSize.VERY_BIG -> MaterialTheme.typography.displaySmall
+                            else -> MaterialTheme . typography . titleLarge
+                        },
+                        color = MaterialTheme.colorScheme.scrim
                     )
                 }
             }
@@ -80,11 +87,13 @@ fun Parchemin(
                         twoLinesMode = false,
                         ratio = 1.45f
                     )
+
                     ScreenSize.VERY_BIG -> CountDownRow(
                         timeInterval = homeState.timeInterval,
                         twoLinesMode = true,
                         ratio = 0.60f
                     )
+
                     else -> CountDownRow(timeInterval = homeState.timeInterval, 1f)
                 }
 
@@ -104,7 +113,11 @@ fun Parchemin(
                         text = stringResource(id = R.string.rejoice_in_building_text),
                         modifier = Modifier,
                         textAlign = TextAlign.Center,
-                        style = MaterialTheme.typography.titleMedium
+                        style = when (screenSize) {
+                            ScreenSize.VERY_BIG -> MaterialTheme.typography.headlineMedium
+                            else -> MaterialTheme . typography . titleMedium
+                        },
+                        color = MaterialTheme.colorScheme.scrim
                     )
                 }
             }
@@ -112,10 +125,10 @@ fun Parchemin(
                 SettingsBar(homeState = homeState, onEvent = onEvent)
             }
             item {
-               val spacerHeight = when (screenSize) {
+                val spacerHeight = when (screenSize) {
                     ScreenSize.VERY_SMALL, ScreenSize.SMALL -> 60.dp
-                   ScreenSize.MEDIUM -> 50.dp
-                   else -> 40.dp
+                    ScreenSize.MEDIUM -> 50.dp
+                    else -> 40.dp
                 }
                 Spacer(modifier = Modifier.height(spacerHeight))
             }

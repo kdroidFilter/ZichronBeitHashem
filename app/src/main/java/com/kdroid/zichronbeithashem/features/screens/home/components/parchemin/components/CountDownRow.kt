@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -57,9 +58,7 @@ fun CountDownRow(
 @Composable
 private fun YearsMonthsDays(timeInterval: TimeInterval, ratio: Float) {
     CountDownComponents(number = timeInterval.years, text = R.plurals.years, ratio)
-    if (timeInterval.months != 0) {
-        CountDownComponents(number = timeInterval.months, text = R.plurals.months, ratio)
-    }
+    CountDownComponents(number = timeInterval.months, text = R.plurals.months, ratio)
     CountDownComponents(number = timeInterval.days, text = R.plurals.days, ratio)
 }
 
@@ -72,6 +71,7 @@ private fun HoursMinutesSeconds(timeInterval: TimeInterval, ratio: Float) {
 
 @Composable
 private fun CountDownComponents(number: Int, text: Int, ratio: Float = 1f) {
+    if(text != R.plurals.secondes && number == 0) { return }
         Column(
             modifier = Modifier
                 .width((82/ratio).dp)
@@ -99,7 +99,8 @@ private fun CountDownComponents(number: Int, text: Int, ratio: Float = 1f) {
                     text = "$number",
                     fontSize = (32/ratio).sp,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    color = Color.Black
                 )
             }
             Row(
@@ -109,7 +110,8 @@ private fun CountDownComponents(number: Int, text: Int, ratio: Float = 1f) {
                     text = pluralStringResource(id = text, count = number),
                     fontSize = (14/ratio).sp,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    color = Color.Black
                 )
             }
         }

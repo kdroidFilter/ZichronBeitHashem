@@ -1,4 +1,4 @@
-package com.kdroid.zichronbeithashem.features.screens.home.components.header
+package com.kdroid.zichronbeithashem.features.screens.home.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,18 +14,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.kdroid.zichronbeithashem.R
 import com.kdroid.zichronbeithashem.core.presentation.screensize.ScreenSize
+import com.kdroid.zichronbeithashem.core.presentation.screensize.ScreenSize.VERY_BIG
 import com.kdroid.zichronbeithashem.core.presentation.screensize.ScreenSize.VERY_SMALL
 
 @Composable
@@ -35,7 +34,7 @@ fun Header(
     pastedYears: Int
 ) {
     val textShadow = Shadow(
-        color = Color.White,
+        color = MaterialTheme.colorScheme.surfaceContainerLowest,
         offset = Offset(2f, 2f),
         blurRadius = 5f
     )
@@ -53,6 +52,13 @@ fun Header(
             yearsCountStyle = MaterialTheme.typography.displayMedium.copy(shadow = textShadow)
             firstTitleLineStyle = MaterialTheme.typography.headlineSmall.copy(shadow = textShadow)
             secondTitleLineStyle = MaterialTheme.typography.titleLarge.copy(shadow = textShadow)
+            secondSpacerHeight = 0.05f
+        }
+        VERY_BIG -> {
+            firstSpacerHeight = 0.05f
+            yearsCountStyle = MaterialTheme.typography.displayLarge.copy(shadow = textShadow, fontSize = 90.sp)
+            firstTitleLineStyle = MaterialTheme.typography.displayMedium.copy(shadow = textShadow)
+            secondTitleLineStyle = MaterialTheme.typography.displaySmall.copy(shadow = textShadow)
             secondSpacerHeight = 0.05f
         }
 
@@ -85,11 +91,12 @@ fun Header(
                 style = yearsCountStyle,
                 textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.scrim,
                 modifier = Modifier.padding(end = 5.dp)
             )
             Text(
                 text = pluralStringResource(id = R.plurals.years, count = pastedYears),
-                fontFamily = FontFamily((Font(R.font.suezone))),
+                color = MaterialTheme.colorScheme.scrim,
                 modifier = Modifier.weight(1f)
             )
         }
@@ -98,8 +105,8 @@ fun Header(
             Text(
                 text = stringResource(id = R.string.destruction_title_line_1),
                 style = firstTitleLineStyle,
-                color = Color.Black,
                 textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.scrim,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp)
@@ -107,8 +114,8 @@ fun Header(
             Text(
                 text = stringResource(id = R.string.destruction_title_line_2),
                 style = secondTitleLineStyle,
-                color = Color.Black,
                 textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.scrim,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp)

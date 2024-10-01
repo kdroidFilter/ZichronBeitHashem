@@ -2,6 +2,7 @@
 
 package com.kdroid.zichronbeithashem.features.screens.home
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,13 +15,14 @@ import androidx.compose.ui.draw.paint
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.kdroid.zichronbeithashem.R
 import com.kdroid.zichronbeithashem.core.presentation.navigation.MainNavigationState
 import com.kdroid.zichronbeithashem.core.presentation.screensize.determineScreenSize
 import com.kdroid.zichronbeithashem.core.presentation.theme.AppTheme
 import com.kdroid.zichronbeithashem.features.screens.home.components.Borders
-import com.kdroid.zichronbeithashem.features.screens.home.components.header.Header
+import com.kdroid.zichronbeithashem.features.screens.home.components.Header
 import com.kdroid.zichronbeithashem.features.screens.home.components.parchemin.Parchemin
 import org.koin.androidx.compose.koinViewModel
 
@@ -47,24 +49,24 @@ private fun HomeScreen(homeState: HomeState, onEvent: (HomeEvents) -> Unit) {
                 modifier = Modifier
                     .fillMaxSize()
                     .paint(
-                        painter = painterResource(id = R.drawable.background),
-                        contentScale = ContentScale.FillWidth,
-                        alignment = alignment
-                    )
-            ) {
-                Borders(screenSize).Display()
-                Header(
-                    paddingValues = paddingValues,
-                    screenSize = screenSize,
-                    pastedYears = homeState.timeInterval.years
-                )
-                Parchemin(onEvent, homeState)
-            }
+                        painter = painterResource(
+                            id = if (isSystemInDarkTheme()) R.drawable.background_dark else R.drawable.background),
+                            contentScale = ContentScale.Crop,
+                            alignment = alignment
+                        )
+                    ) {
+                        Borders(screenSize).Display()
+                        Header(
+                            paddingValues = paddingValues,
+                            screenSize = screenSize,
+                            pastedYears = homeState.timeInterval.years
+                        )
+                        Parchemin(onEvent, homeState)
+                    }
         }
     }
 }
-
-@Preview
+@PreviewLightDark
 @Preview(widthDp = 370, heightDp = 492)
 @Composable
 fun HomeScreenPreview() {

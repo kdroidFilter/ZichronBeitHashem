@@ -17,7 +17,7 @@ class TimeIntervalProviderImpl : TimeIntervalProvider {
         return JewishDate(3830, JewishDate.AV, 9)
     }
 
-    private fun getJerusalemSunset(dayOffset: Int): Date {
+     fun getJerusalemSunset(dayOffset: Int): Date {
 
         // Jerusalem coordinates
         val latitude = 31.7683
@@ -48,4 +48,9 @@ class TimeIntervalProviderImpl : TimeIntervalProvider {
         return System.currentTimeMillis()
     }
 
+}
+
+fun main() {
+   println( TimeIntervalProviderImpl().getJerusalemSunset(0).time)
+    println(TimeIntervalProviderImpl().getYesterdayJerusalemSunset().time)
 }

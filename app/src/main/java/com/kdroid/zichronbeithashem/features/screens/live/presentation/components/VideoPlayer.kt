@@ -1,4 +1,4 @@
-package com.kdroid.zichronbeithashem.features.screens.live.components
+package com.kdroid.zichronbeithashem.features.screens.live.presentation.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
@@ -16,10 +16,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kdroid.zichronbeithashem.R
 import com.kdroid.zichronbeithashem.features.mediaplayer.videoplayer.presentation.LiveVideoPlayer
+
 
 @Composable
 fun VideoPlayerWithCards() {
@@ -29,7 +31,6 @@ fun VideoPlayerWithCards() {
             title = "The prayer square"
         )
         CardsRow()
-
     }
 }
 

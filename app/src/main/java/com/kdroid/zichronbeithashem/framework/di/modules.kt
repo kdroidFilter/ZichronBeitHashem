@@ -2,7 +2,9 @@ package com.kdroid.zichronbeithashem.framework.di
 
 import com.kdroid.zichronbeithashem.features.mediaplayer.audioplayer.data.AudioPlayerImpl
 import com.kdroid.zichronbeithashem.features.screens.home.HomeViewModel
-import com.kdroid.zichronbeithashem.features.screens.live.LiveViewModel
+import com.kdroid.zichronbeithashem.features.screens.live.presentation.LiveViewModel
+import com.kdroid.zichronbeithashem.features.screens.settings.SettingsViewModel
+import com.kdroid.zichronbeithashem.features.screens.tefilots.TefilotsViewModel
 import com.kdroid.zichronbeithashem.features.services.timeintervalprovider.data.TimeIntervalProviderImpl
 import com.kdroid.zichronbeithashem.features.widget.presentation.utils.TimeElapsedWidgetUpdater
 import com.kdroid.zichronbeithashem.framework.managers.soundlevelmanager.SoundLevelManagerImpl
@@ -18,4 +20,6 @@ val appModule = module {
 
     viewModel { HomeViewModel() }
     viewModel { LiveViewModel() }
+    viewModel { TefilotsViewModel() }
+    viewModel { SettingsViewModel() }
 }

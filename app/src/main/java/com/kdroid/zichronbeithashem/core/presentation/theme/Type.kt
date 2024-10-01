@@ -8,7 +8,6 @@ import com.kdroid.zichronbeithashem.R
 
 val bodyFontFamily = FontFamily((Font(R.font.suezone)))
 
-
 val displayFontFamily = FontFamily((Font(R.font.suezone)))
 
 // Default Material 3 typography values

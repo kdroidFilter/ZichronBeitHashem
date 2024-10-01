@@ -10,16 +10,12 @@ import com.kdroid.zichronbeithashem.core.presentation.theme.AppTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+            enableEdgeToEdge()
         setContent {
             AppTheme {
                 MainNavHost()
             }
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 }
 

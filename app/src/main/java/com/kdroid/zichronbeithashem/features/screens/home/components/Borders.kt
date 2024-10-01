@@ -1,6 +1,7 @@
 package com.kdroid.zichronbeithashem.features.screens.home.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -82,7 +83,7 @@ class Borders(screenSize: ScreenSize) {
     @Composable
     private fun TopStart(modifier: Modifier) {
         Image(
-            painter = painterResource(id = lightOrnementRes),
+            painter = painterResource(id = if (isSystemInDarkTheme()) darkOrnementRes else lightOrnementRes),
             contentDescription = null,
             modifier = modifier
                 .size(adaptedBorders.size.dp)
@@ -101,7 +102,7 @@ class Borders(screenSize: ScreenSize) {
     @Composable
     private fun TopEnd(modifier: Modifier) {
         Image(
-            painter = painterResource(id = lightOrnementRes),
+            painter = painterResource(id = if (isSystemInDarkTheme()) darkOrnementRes else lightOrnementRes),
             contentDescription = null,
             modifier = modifier
                 .size(adaptedBorders.size.dp)

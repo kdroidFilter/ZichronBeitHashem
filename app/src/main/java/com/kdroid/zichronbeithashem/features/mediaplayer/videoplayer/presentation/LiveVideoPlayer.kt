@@ -39,7 +39,7 @@ fun LiveVideoPlayer(modifier: Modifier = Modifier, url: String, title: String) {
 
         ),
         volume = 1f,
-        handleLifecycle = true,
+        handleLifecycle = false,
         modifier = modifier
             .aspectRatio(16f / 9f)
             .clip(RoundedCornerShape(4.dp))

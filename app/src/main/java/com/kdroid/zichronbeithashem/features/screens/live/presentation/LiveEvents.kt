@@ -1,4 +1,4 @@
-package com.kdroid.zichronbeithashem.features.screens.live
+package com.kdroid.zichronbeithashem.features.screens.live.presentation
 
 import com.kdroid.zichronbeithashem.core.presentation.navigation.MainNavigationState
 
